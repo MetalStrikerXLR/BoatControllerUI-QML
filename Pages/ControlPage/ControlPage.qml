@@ -11,8 +11,8 @@ Item {
 
     Image {
         id: seperatorBG
-        width: 426 * respWidthFactor
-        height: 503 * respHeightFactor
+        width: 426 * respWidthFactor * 0.72
+        height: 503 * respHeightFactor * 0.72
         source: "qrc:/Assets/ControlPage/SectionSeperator.png"
         anchors {
             top: parent.top
@@ -28,9 +28,9 @@ Item {
         id: interiorLightLabel
         text: "INTERIOR LIGHTS"
         color: "#FFFFFF"
-        font.pixelSize: 8.5 * respAvgFactor
+        font.pixelSize: 8.5 * respAvgFactor * 0.72
         font.family: "Kentledge"
-        font.weight: 400 * respAvgFactor
+        font.weight: 400 * respAvgFactor * 0.72
         horizontalAlignment: Qt.AlignHCenter
         anchors {
             top: parent.top
@@ -42,8 +42,8 @@ Item {
 
     Row {
         id: interiorLightRow1
-        width: 83 * respWidthFactor
-        height: 83 * respHeightFactor
+        width: 83 * respWidthFactor * 0.72
+        height: 83 * respHeightFactor * 0.72
         spacing: -2  * respWidthFactor
         anchors {
             top: parent.top
@@ -54,8 +54,8 @@ Item {
 
         ToggleableButton {
             id: interiorLightBtnA
-            width: 83 * respWidthFactor
-            height: 83 * respHeightFactor
+            width: 83 * respWidthFactor * 0.72
+            height: 83 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/ControlPage/ButtonA_Unpressed.png"
             iconOffPressedState: "qrc:/Assets/ControlPage/ButtonA_Unpressed.png"
             iconOnState: "qrc:/Assets/ControlPage/ButtonA_Pressed.png"
@@ -65,7 +65,7 @@ Item {
                 id: interiorLightBtnATxt
                 text: "Navigation\nLights"
                 color: "#79787E"
-                font.pixelSize: 8 * respAvgFactor
+                font.pixelSize: 8 * respAvgFactor * 0.72
                 font.family: "Kentledge"
                 horizontalAlignment: Qt.AlignHCenter
                 anchors {
@@ -82,8 +82,8 @@ Item {
 
         ToggleableButton {
             id: interiorLightBtnB
-            width: 83 * respWidthFactor
-            height: 83 * respHeightFactor
+            width: 83 * respWidthFactor * 0.72
+            height: 83 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/ControlPage/ButtonB_Unpressed.png"
             iconOffPressedState: "qrc:/Assets/ControlPage/ButtonB_Unpressed.png"
             iconOnState: "qrc:/Assets/ControlPage/ButtonB_Pressed.png"
@@ -93,7 +93,7 @@ Item {
                 id: interiorLightBtnBTxt
                 text: "Anchor\nLights"
                 color: "#79787E"
-                font.pixelSize: 8 * respAvgFactor
+                font.pixelSize: 8 * respAvgFactor * 0.72
                 font.family: "Kentledge"
                 horizontalAlignment: Qt.AlignHCenter
                 anchors {
@@ -110,8 +110,8 @@ Item {
 
         ToggleableButton {
             id: interiorLightBtnC
-            width: 83 * respWidthFactor
-            height: 83 * respHeightFactor
+            width: 83 * respWidthFactor * 0.72
+            height: 83 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/ControlPage/ButtonC_Unpressed.png"
             iconOffPressedState: "qrc:/Assets/ControlPage/ButtonC_Unpressed.png"
             iconOnState: "qrc:/Assets/ControlPage/ButtonC_Pressed.png"
@@ -121,7 +121,7 @@ Item {
                 id: interiorLightBtnCTxt
                 text: "Underwater\nLights"
                 color: "#79787E"
-                font.pixelSize: 8 * respAvgFactor
+                font.pixelSize: 8 * respAvgFactor * 0.72
                 font.family: "Kentledge"
                 horizontalAlignment: Qt.AlignHCenter
                 anchors {
@@ -139,19 +139,19 @@ Item {
 
     Row {
         id: interiorLightRow2
-        width: 83 * respWidthFactor
-        height: 83 * respHeightFactor
+        width: 83 * respWidthFactor * 0.72
+        height: 83 * respHeightFactor * 0.72
         spacing: -2  * respWidthFactor
         anchors {
             top: interiorLightRow1.bottom
             left: interiorLightRow1.left
-            topMargin: 27 * respHeightFactor
+            topMargin: 27 * respHeightFactor * 0.72
         }
 
         ToggleableButton {
             id: interiorLightBtnD
-            width: 83 * respWidthFactor
-            height: 83 * respHeightFactor
+            width: 83 * respWidthFactor * 0.72
+            height: 83 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/ControlPage/ButtonD_Unpressed.png"
             iconOffPressedState: "qrc:/Assets/ControlPage/ButtonD_Unpressed.png"
             iconOnState: "qrc:/Assets/ControlPage/ButtonD_Pressed.png"
@@ -161,7 +161,7 @@ Item {
                 id: interiorLightBtnDTxt
                 text: "Docking\nLights"
                 color: "#79787E"
-                font.pixelSize: 8 * respAvgFactor
+                font.pixelSize: 8 * respAvgFactor * 0.72
                 font.family: "Kentledge"
                 horizontalAlignment: Qt.AlignHCenter
                 anchors {
@@ -178,8 +178,8 @@ Item {
 
         ToggleableButton {
             id: interiorLightBtnE
-            width: 83 * respWidthFactor
-            height: 83 * respHeightFactor
+            width: 83 * respWidthFactor * 0.72
+            height: 83 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/ControlPage/ButtonD_Unpressed.png"
             iconOffPressedState: "qrc:/Assets/ControlPage/ButtonD_Unpressed.png"
             iconOnState: "qrc:/Assets/ControlPage/ButtonD_Pressed.png"
@@ -189,7 +189,7 @@ Item {
                 id: interiorLightBtnETxt
                 text: "Docking\nLights"
                 color: "#79787E"
-                font.pixelSize: 8 * respAvgFactor
+                font.pixelSize: 8 * respAvgFactor * 0.72
                 font.family: "Kentledge"
                 horizontalAlignment: Qt.AlignHCenter
                 anchors {
@@ -205,8 +205,8 @@ Item {
 
         ToggleableButton {
             id: interiorLightBtnF
-            width: 83 * respWidthFactor
-            height: 83 * respHeightFactor
+            width: 83 * respWidthFactor * 0.72
+            height: 83 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/ControlPage/ButtonD_Unpressed.png"
             iconOffPressedState: "qrc:/Assets/ControlPage/ButtonD_Unpressed.png"
             iconOnState: "qrc:/Assets/ControlPage/ButtonD_Pressed.png"
@@ -216,7 +216,7 @@ Item {
                 id: interiorLightBtnFTxt
                 text: "Docking\nLights"
                 color: "#79787E"
-                font.pixelSize: 8 * respAvgFactor
+                font.pixelSize: 8 * respAvgFactor * 0.72
                 font.family: "Kentledge"
                 horizontalAlignment: Qt.AlignHCenter
                 anchors {
@@ -238,34 +238,34 @@ Item {
         id: exteriorLightLabel
         text: "EXTERIOR LIGHTS"
         color: "#FFFFFF"
-        font.pixelSize: 8.5 * respAvgFactor
+        font.pixelSize: 8.5 * respAvgFactor * 0.72
         font.family: "Kentledge"
-        font.weight: 400 * respAvgFactor
+        font.weight: 400 * respAvgFactor * 0.72
         horizontalAlignment: Qt.AlignHCenter
         anchors {
             top: parent.top
             left: parent.left
-            topMargin: 325 * respHeightFactor
+            topMargin: 325 * respHeightFactor * 0.72
             leftMargin: 60 * respWidthFactor
         }
     }
 
     Row {
         id: exteriorLightRow1
-        width: 83 * respWidthFactor
-        height: 83 * respHeightFactor
+        width: 83 * respWidthFactor * 0.72
+        height: 83 * respHeightFactor * 0.72
         spacing: -2  * respWidthFactor
         anchors {
             top: parent.top
             left: parent.left
-            topMargin: 340 * respHeightFactor
+            topMargin: 340 * respHeightFactor * 0.72
             leftMargin: 54 * respWidthFactor
         }
 
         ToggleableButton {
             id: exteriorLightBtnA
-            width: 83 * respWidthFactor
-            height: 83 * respHeightFactor
+            width: 83 * respWidthFactor * 0.72
+            height: 83 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/ControlPage/ButtonD_Unpressed.png"
             iconOffPressedState: "qrc:/Assets/ControlPage/ButtonD_Unpressed.png"
             iconOnState: "qrc:/Assets/ControlPage/ButtonD_Pressed.png"
@@ -275,7 +275,7 @@ Item {
                 id: exteriorLightBtnATxt
                 text: "Docking\nLights"
                 color: "#79787E"
-                font.pixelSize: 8 * respAvgFactor
+                font.pixelSize: 8 * respAvgFactor * 0.72
                 font.family: "Kentledge"
                 horizontalAlignment: Qt.AlignHCenter
                 anchors {
@@ -292,8 +292,8 @@ Item {
 
         ToggleableButton {
             id: exteriorLightBtnB
-            width: 83 * respWidthFactor
-            height: 83 * respHeightFactor
+            width: 83 * respWidthFactor * 0.72
+            height: 83 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/ControlPage/ButtonD_Unpressed.png"
             iconOffPressedState: "qrc:/Assets/ControlPage/ButtonD_Unpressed.png"
             iconOnState: "qrc:/Assets/ControlPage/ButtonD_Pressed.png"
@@ -303,7 +303,7 @@ Item {
                 id: exteriorLightBtnBTxt
                 text: "Docking\nLights"
                 color: "#79787E"
-                font.pixelSize: 8 * respAvgFactor
+                font.pixelSize: 8 * respAvgFactor * 0.72
                 font.family: "Kentledge"
                 horizontalAlignment: Qt.AlignHCenter
                 anchors {
@@ -320,8 +320,8 @@ Item {
 
         ToggleableButton {
             id: exteriorLightBtnC
-            width: 83 * respWidthFactor
-            height: 83 * respHeightFactor
+            width: 83 * respWidthFactor * 0.72
+            height: 83 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/ControlPage/ButtonD_Unpressed.png"
             iconOffPressedState: "qrc:/Assets/ControlPage/ButtonD_Unpressed.png"
             iconOnState: "qrc:/Assets/ControlPage/ButtonD_Pressed.png"
@@ -331,7 +331,7 @@ Item {
                 id: exteriorLightBtnCTxt
                 text: "Docking\nLights"
                 color: "#79787E"
-                font.pixelSize: 8 * respAvgFactor
+                font.pixelSize: 8 * respAvgFactor * 0.72
                 font.family: "Kentledge"
                 horizontalAlignment: Qt.AlignHCenter
                 anchors {
@@ -349,19 +349,19 @@ Item {
 
     Row {
         id: exteriorLightRow2
-        width: 83 * respWidthFactor
-        height: 83 * respHeightFactor
+        width: 83 * respWidthFactor * 0.72
+        height: 83 * respHeightFactor * 0.72
         spacing: -2  * respWidthFactor
         anchors {
             top: exteriorLightRow1.bottom
             left: exteriorLightRow1.left
-            topMargin: 27 * respHeightFactor
+            topMargin: 27 * respHeightFactor * 0.72
         }
 
         ToggleableButton {
             id: exteriorLightBtnD
-            width: 83 * respWidthFactor
-            height: 83 * respHeightFactor
+            width: 83 * respWidthFactor * 0.72
+            height: 83 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/ControlPage/ButtonD_Unpressed.png"
             iconOffPressedState: "qrc:/Assets/ControlPage/ButtonD_Unpressed.png"
             iconOnState: "qrc:/Assets/ControlPage/ButtonD_Pressed.png"
@@ -371,7 +371,7 @@ Item {
                 id: exteriorLightBtnDTxt
                 text: "Docking\nLights"
                 color: "#79787E"
-                font.pixelSize: 8 * respAvgFactor
+                font.pixelSize: 8 * respAvgFactor * 0.72
                 font.family: "Kentledge"
                 horizontalAlignment: Qt.AlignHCenter
                 anchors {
@@ -388,8 +388,8 @@ Item {
 
         ToggleableButton {
             id: exteriorLightBtnE
-            width: 83 * respWidthFactor
-            height: 83 * respHeightFactor
+            width: 83 * respWidthFactor * 0.72
+            height: 83 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/ControlPage/ButtonD_Unpressed.png"
             iconOffPressedState: "qrc:/Assets/ControlPage/ButtonD_Unpressed.png"
             iconOnState: "qrc:/Assets/ControlPage/ButtonD_Pressed.png"
@@ -399,7 +399,7 @@ Item {
                 id: exteriorLightBtnETxt
                 text: "Docking\nLights"
                 color: "#79787E"
-                font.pixelSize: 8 * respAvgFactor
+                font.pixelSize: 8 * respAvgFactor * 0.72
                 font.family: "Kentledge"
                 horizontalAlignment: Qt.AlignHCenter
                 anchors {
@@ -415,8 +415,8 @@ Item {
 
         ToggleableButton {
             id: exteriorLightBtnF
-            width: 83 * respWidthFactor
-            height: 83 * respHeightFactor
+            width: 83 * respWidthFactor * 0.72
+            height: 83 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/ControlPage/ButtonD_Unpressed.png"
             iconOffPressedState: "qrc:/Assets/ControlPage/ButtonD_Unpressed.png"
             iconOnState: "qrc:/Assets/ControlPage/ButtonD_Pressed.png"
@@ -426,7 +426,7 @@ Item {
                 id: exteriorLightBtnFTxt
                 text: "Docking\nLights"
                 color: "#79787E"
-                font.pixelSize: 8 * respAvgFactor
+                font.pixelSize: 8 * respAvgFactor * 0.72
                 font.family: "Kentledge"
                 horizontalAlignment: Qt.AlignHCenter
                 anchors {
@@ -448,34 +448,31 @@ Item {
         id: switchesLabel
         text: "SWITCHES"
         color: "#FFFFFF"
-        font.pixelSize: 8.5 * respAvgFactor
+        font.pixelSize: 8.5 * respAvgFactor * 0.72
         font.family: "Kentledge"
-        font.weight: 400 * respAvgFactor
+        font.weight: 400 * respAvgFactor * 0.72
         horizontalAlignment: Qt.AlignHCenter
         anchors {
             top: parent.top
             left: parent.left
             topMargin: 41 * respHeightFactor
-            leftMargin: 382 * respWidthFactor
+            leftMargin: 405 * respWidthFactor * 0.72
         }
     }
 
     Column {
         id: switchCol
-        width: 83 * respWidthFactor
-        height: 83 * respHeightFactor
-        spacing: 20  * respWidthFactor
+        spacing: 20  * respWidthFactor * 0.72
         anchors {
-            top: parent.top
-            left: parent.left
-            topMargin: 81 * respHeightFactor
-            leftMargin: 374 * respWidthFactor
+            top: switchesLabel.top
+            topMargin: 43 * respHeightFactor * 0.72
+            horizontalCenter: switchesLabel.horizontalCenter
         }
 
         ToggleableButton {
             id: switchBtnA
-            width: 70 * respWidthFactor
-            height: 70 * respHeightFactor
+            width: 70 * respWidthFactor * 0.72
+            height: 70 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/ControlPage/ButtonG_Unpressed.png"
             iconOffPressedState: "qrc:/Assets/ControlPage/ButtonG_Unpressed.png"
             iconOnState: "qrc:/Assets/ControlPage/ButtonG_Pressed.png"
@@ -485,7 +482,7 @@ Item {
                 id: switchBtnATxt
                 text: "FRIDGE"
                 color: "#79787E"
-                font.pixelSize: 8 * respAvgFactor
+                font.pixelSize: 8 * respAvgFactor * 0.72
                 font.family: "Kentledge"
                 horizontalAlignment: Qt.AlignHCenter
                 anchors {
@@ -502,8 +499,8 @@ Item {
 
         ToggleableButton {
             id: switchBtnB
-            width: 70 * respWidthFactor
-            height: 70 * respHeightFactor
+            width: 70 * respWidthFactor * 0.72
+            height: 70 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/ControlPage/ButtonH_Unpressed.png"
             iconOffPressedState: "qrc:/Assets/ControlPage/ButtonH_Unpressed.png"
             iconOnState: "qrc:/Assets/ControlPage/ButtonH_Pressed.png"
@@ -513,7 +510,7 @@ Item {
                 id: switchBtnBTxt
                 text: "HORN"
                 color: "#79787E"
-                font.pixelSize: 8 * respAvgFactor
+                font.pixelSize: 8 * respAvgFactor * 0.72
                 font.family: "Kentledge"
                 horizontalAlignment: Qt.AlignHCenter
                 anchors {
@@ -530,8 +527,8 @@ Item {
 
         ToggleableButton {
             id: switchBtnC
-            width: 70 * respWidthFactor
-            height: 70 * respHeightFactor
+            width: 70 * respWidthFactor * 0.72
+            height: 70 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/ControlPage/ButtonI_Unpressed.png"
             iconOffPressedState: "qrc:/Assets/ControlPage/ButtonI_Unpressed.png"
             iconOnState: "qrc:/Assets/ControlPage/ButtonI_Pressed.png"
@@ -541,7 +538,7 @@ Item {
                 id: switchBtnCTxt
                 text: "TOILET"
                 color: "#79787E"
-                font.pixelSize: 8 * respAvgFactor
+                font.pixelSize: 8 * respAvgFactor * 0.72
                 font.family: "Kentledge"
                 horizontalAlignment: Qt.AlignHCenter
                 anchors {
@@ -558,8 +555,8 @@ Item {
 
         ToggleableButton {
             id: switchBtnD
-            width: 70 * respWidthFactor
-            height: 70 * respHeightFactor
+            width: 70 * respWidthFactor * 0.72
+            height: 70 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/ControlPage/ButtonJ_Unpressed.png"
             iconOffPressedState: "qrc:/Assets/ControlPage/ButtonJ_Unpressed.png"
             iconOnState: "qrc:/Assets/ControlPage/ButtonJ_Pressed.png"
@@ -569,7 +566,7 @@ Item {
                 id: switchBtnDTxt
                 text: "WATER HEATER"
                 color: "#79787E"
-                font.pixelSize: 8 * respAvgFactor
+                font.pixelSize: 8 * respAvgFactor * 0.72
                 font.family: "Kentledge"
                 horizontalAlignment: Qt.AlignHCenter
                 anchors {
@@ -586,8 +583,8 @@ Item {
 
         ToggleableButton {
             id: switchBtnE
-            width: 70 * respWidthFactor
-            height: 70 * respHeightFactor
+            width: 70 * respWidthFactor * 0.72
+            height: 70 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/ControlPage/ButtonK_Unpressed.png"
             iconOffPressedState: "qrc:/Assets/ControlPage/ButtonK_Unpressed.png"
             iconOnState: "qrc:/Assets/ControlPage/ButtonK_Pressed.png"
@@ -597,7 +594,7 @@ Item {
                 id: switchBtnETxt
                 text: "ELECTRONIC"
                 color: "#79787E"
-                font.pixelSize: 8 * respAvgFactor
+                font.pixelSize: 8 * respAvgFactor * 0.72
                 font.family: "Kentledge"
                 horizontalAlignment: Qt.AlignHCenter
                 anchors {
@@ -619,15 +616,15 @@ Item {
         id: fluidsLabel
         text: "FLUIDS"
         color: "#FFFFFF"
-        font.pixelSize: 8.5 * respAvgFactor
+        font.pixelSize: 8.5 * respAvgFactor * 0.72
         font.family: "Kentledge"
-        font.weight: 400 * respAvgFactor
+        font.weight: 400 * respAvgFactor * 0.72
         horizontalAlignment: Qt.AlignHCenter
         anchors {
             top: parent.top
             left: parent.left
             topMargin: 41 * respHeightFactor
-            leftMargin: 689 * respWidthFactor
+            leftMargin: 650 * respWidthFactor
         }
     }
 
@@ -636,16 +633,15 @@ Item {
         spacing: 18  * respWidthFactor
         anchors {
             top: parent.top
-            left: parent.left
+            horizontalCenter: fluidsLabel.horizontalCenter
             topMargin: 104 * respHeightFactor
-            leftMargin: 526 * respWidthFactor
         }
 
         ChartStyleProgressBar {
             id: progressBarA
-            width: 115 * respWidthFactor
-            height: 140 * respHeightFactor
-            avgFactor: respAvgFactor
+            width: 115 * respWidthFactor * 0.72
+            height: 140 * respHeightFactor * 0.72
+            avgFactor: respAvgFactor * 0.72
             progressBarColorStart: "#07850C"
             progressBarColorEnd: "#2AA62F"
             itemName: "Bar A"
@@ -655,9 +651,9 @@ Item {
 
         ChartStyleProgressBar {
             id: progressBarB
-            width: 115 * respWidthFactor
-            height: 140 * respHeightFactor
-            avgFactor: respAvgFactor
+            width: 115 * respWidthFactor * 0.72
+            height: 140 * respHeightFactor * 0.72
+            avgFactor: respAvgFactor * 0.72
             progressBarColorStart: "#D80B0B"
             progressBarColorEnd: "#A62A2A"
             itemName: "Bar B"
@@ -666,30 +662,20 @@ Item {
 
         ChartStyleProgressBar {
             id: progressBarC
-            width: 115 * respWidthFactor
-            height: 140 * respHeightFactor
-            avgFactor: respAvgFactor
+            width: 115 * respWidthFactor * 0.72
+            height: 140 * respHeightFactor * 0.72
+            avgFactor: respAvgFactor * 0.72
             progressBarColorStart: "#07850C"
             progressBarColorEnd: "#2AA62F"
             itemName: "Bar C"
             value: 100
         }
-    }
-
-    Row {
-        id: fluidsProgressBarRow2
-        spacing: 18  * respWidthFactor
-        anchors {
-            top: fluidsProgressBarRow1.bottom
-            topMargin: 32 * respHeightFactor
-            horizontalCenter: fluidsProgressBarRow1.horizontalCenter
-        }
 
         ChartStyleProgressBar {
             id: progressBarD
-            width: 115 * respWidthFactor
-            height: 140 * respHeightFactor
-            avgFactor: respAvgFactor
+            width: 115 * respWidthFactor * 0.72
+            height: 140 * respHeightFactor * 0.72
+            avgFactor: respAvgFactor * 0.72
             progressBarColorStart: "#07850C"
             progressBarColorEnd: "#2AA62F"
             itemName: "Bar D"
@@ -698,9 +684,9 @@ Item {
 
         ChartStyleProgressBar {
             id: progressBarE
-            width: 115 * respWidthFactor
-            height: 140 * respHeightFactor
-            avgFactor: respAvgFactor
+            width: 115 * respWidthFactor * 0.72
+            height: 140 * respHeightFactor * 0.72
+            avgFactor: respAvgFactor * 0.72
             progressBarColorStart: "#075085"
             progressBarColorEnd: "#2A5CA6"
             itemName: "Bar E"
@@ -710,20 +696,17 @@ Item {
 
     Row {
         id: fluidsRow
-        width: 83 * respWidthFactor
-        height: 83 * respHeightFactor
         spacing: -2  * respWidthFactor
         anchors {
             top: parent.top
-            left: parent.left
-            topMargin: 430 * respHeightFactor
-            leftMargin: 510 * respWidthFactor
+            horizontalCenter: fluidsLabel.horizontalCenter
+            topMargin: 360 * respHeightFactor * 0.72
         }
 
         ToggleableButton {
             id: fluidControlBtnA
-            width: 83 * respWidthFactor
-            height: 83 * respHeightFactor
+            width: 83 * respWidthFactor * 0.72
+            height: 83 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/ControlPage/ButtonE_Unpressed.png"
             iconOffPressedState: "qrc:/Assets/ControlPage/ButtonE_Unpressed.png"
             iconOnState: "qrc:/Assets/ControlPage/ButtonE_Pressed.png"
@@ -733,7 +716,7 @@ Item {
                 id: fluidControlBtnATxt
                 text: "Water\nPump A"
                 color: "#79787E"
-                font.pixelSize: 8 * respAvgFactor
+                font.pixelSize: 8 * respAvgFactor * 0.72
                 font.family: "Kentledge"
                 horizontalAlignment: Qt.AlignHCenter
                 anchors {
@@ -750,8 +733,8 @@ Item {
 
         ToggleableButton {
             id: fluidControlBtnB
-            width: 83 * respWidthFactor
-            height: 83 * respHeightFactor
+            width: 83 * respWidthFactor * 0.72
+            height: 83 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/ControlPage/ButtonE_Unpressed.png"
             iconOffPressedState: "qrc:/Assets/ControlPage/ButtonE_Unpressed.png"
             iconOnState: "qrc:/Assets/ControlPage/ButtonE_Pressed.png"
@@ -761,7 +744,7 @@ Item {
                 id: fluidControlBtnBTxt
                 text: "Water\nPump B"
                 color: "#79787E"
-                font.pixelSize: 8 * respAvgFactor
+                font.pixelSize: 8 * respAvgFactor * 0.72
                 font.family: "Kentledge"
                 horizontalAlignment: Qt.AlignHCenter
                 anchors {
@@ -778,8 +761,8 @@ Item {
 
         ToggleableButton {
             id: fluidControlBtnC
-            width: 83 * respWidthFactor
-            height: 83 * respHeightFactor
+            width: 83 * respWidthFactor * 0.72
+            height: 83 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/ControlPage/ButtonE_Unpressed.png"
             iconOffPressedState: "qrc:/Assets/ControlPage/ButtonE_Unpressed.png"
             iconOnState: "qrc:/Assets/ControlPage/ButtonE_Pressed.png"
@@ -789,7 +772,7 @@ Item {
                 id: fluidControlBtnCTxt
                 text: "Water\nPump C"
                 color: "#79787E"
-                font.pixelSize: 8 * respAvgFactor
+                font.pixelSize: 8 * respAvgFactor * 0.72
                 font.family: "Kentledge"
                 horizontalAlignment: Qt.AlignHCenter
                 anchors {
@@ -806,8 +789,8 @@ Item {
 
         ToggleableButton {
             id: fluidControlBtnD
-            width: 83 * respWidthFactor
-            height: 83 * respHeightFactor
+            width: 83 * respWidthFactor * 0.72
+            height: 83 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/ControlPage/ButtonE_Unpressed.png"
             iconOffPressedState: "qrc:/Assets/ControlPage/ButtonE_Unpressed.png"
             iconOnState: "qrc:/Assets/ControlPage/ButtonE_Pressed.png"
@@ -817,7 +800,7 @@ Item {
                 id: fluidControlBtnDTxt
                 text: "Water\nPump D"
                 color: "#79787E"
-                font.pixelSize: 8 * respAvgFactor
+                font.pixelSize: 8 * respAvgFactor * 0.72
                 font.family: "Kentledge"
                 horizontalAlignment: Qt.AlignHCenter
                 anchors {
@@ -834,8 +817,8 @@ Item {
 
         ToggleableButton {
             id: fluidControlBtnE
-            width: 83 * respWidthFactor
-            height: 83 * respHeightFactor
+            width: 83 * respWidthFactor * 0.72
+            height: 83 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/ControlPage/ButtonE_Unpressed.png"
             iconOffPressedState: "qrc:/Assets/ControlPage/ButtonE_Unpressed.png"
             iconOnState: "qrc:/Assets/ControlPage/ButtonE_Pressed.png"
@@ -845,7 +828,7 @@ Item {
                 id: fluidControlBtnETxt
                 text: "Water\nPump E"
                 color: "#79787E"
-                font.pixelSize: 8 * respAvgFactor
+                font.pixelSize: 8 * respAvgFactor * 0.72
                 font.family: "Kentledge"
                 horizontalAlignment: Qt.AlignHCenter
                 anchors {

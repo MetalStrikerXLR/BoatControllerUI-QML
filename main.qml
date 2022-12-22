@@ -8,13 +8,13 @@ import "./Pages/Components"
 
 ApplicationWindow {
     width: 1065
-    height: 832
+    height: 600
     visible: true
     //    visibility: "Maximized"
     title: qsTr("Boat Controller App")
 
     property int baseAssetWidth: 1065
-    property int baseAssetHeight: 832
+    property int baseAssetHeight: 600
     property real respWidthFactor: width / baseAssetWidth
     property real respHeightFactor: height / baseAssetHeight
     property real respAvgFactor: Math.sqrt(Math.pow(respWidthFactor, 2) + Math.pow(respHeightFactor, 2))
@@ -60,31 +60,31 @@ ApplicationWindow {
 
     Label {
         id: logo
-        width: 62 * respWidthFactor
-        height: 30 * respHeightFactor
+        width: 62 * respWidthFactor * 0.72
+        height: 30 * respHeightFactor * 0.72
         text: "LOGO"
         color: "#FFFFFF"
         font.family: "Kentledge"
-        font.pixelSize: 18 * respAvgFactor
+        font.pixelSize: 18 * respAvgFactor * 0.72
         font.bold: true
         anchors {
             top: parent.top
             left: parent.left
-            topMargin: 63 * respHeightFactor
-            leftMargin: 112 * respWidthFactor
+            topMargin: 63 * respHeightFactor * 0.72
+            leftMargin: 112 * respWidthFactor * 0.72
         }
 
     }
 
     Image {
         id: alarmIcon
-        width: 18 * respWidthFactor
-        height: 20.73 * respHeightFactor
+        width: 18 * respWidthFactor * 0.72
+        height: 20.73 * respHeightFactor * 0.72
         source: "qrc:/Assets/MainPage/AlarmIcon.png"
         anchors {
             top: parent.top
             left: parent.left
-            topMargin: 70 * respHeightFactor
+            topMargin: 70 * respHeightFactor * 0.72
             leftMargin: 814 * respWidthFactor
         }
     }
@@ -93,12 +93,12 @@ ApplicationWindow {
         id: timeText
         text: currentTime
         color: "white"
-        font.pixelSize: 18 * respAvgFactor
+        font.pixelSize: 18 * respAvgFactor * 0.72
         font.family: "Kentledge"
         anchors {
             top: parent.top
             left: parent.left
-            topMargin: 51 * respHeightFactor
+            topMargin: 51 * respHeightFactor * 0.72
             leftMargin: 880 * respWidthFactor
         }
     }
@@ -107,12 +107,12 @@ ApplicationWindow {
         id: dateText
         text: currentDate
         color: "#807F84"
-        font.pixelSize: 10 * respAvgFactor
+        font.pixelSize: 10 * respAvgFactor * 0.72
         font.family: "Kentledge"
         anchors{
             top: timeText.bottom
             horizontalCenter: timeText.horizontalCenter
-            topMargin: 4 * respHeightFactor
+            topMargin: 4 * respHeightFactor * 0.72
         }
     }
 
@@ -120,14 +120,14 @@ ApplicationWindow {
     Rectangle {
         id: viewHolder
         width: 945 * respWidthFactor
-        height: 590 * respHeightFactor
+        height: 590 * respHeightFactor * 0.72
         color: "#201F25"
         radius: 20 * respAvgFactor
         clip: true
         anchors {
             top: parent.top
             left: parent.left
-            topMargin: 120 * respHeightFactor
+            topMargin: 120 * respHeightFactor * 0.72
             leftMargin: 60 * respWidthFactor
         }
 
@@ -168,13 +168,13 @@ ApplicationWindow {
         anchors {
             top: viewHolder.bottom
             horizontalCenter: viewHolder.horizontalCenter
-            topMargin: -2 * respHeightFactor
+            topMargin: -2 * respHeightFactor * 0.72
         }
 
         ToggleableButton {
             id: driveBtn
-            width: 100 * respWidthFactor
-            height: 122 * respHeightFactor
+            width: 100 * respWidthFactor * 0.72
+            height: 122 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/MainPage/DriveTabUnselected.png"
             iconOffPressedState: "qrc:/Assets/MainPage/DriveTabUnselected.png"
             iconOnState: "qrc:/Assets/MainPage/DriveTabSelected.png"
@@ -188,8 +188,8 @@ ApplicationWindow {
 
         ToggleableButton {
             id: controlBtn
-            width: 100 * respWidthFactor
-            height: 122 * respHeightFactor
+            width: 100 * respWidthFactor * 0.72
+            height: 122 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/MainPage/ControlTabUnselected.png"
             iconOffPressedState: "qrc:/Assets/MainPage/ControlTabUnselected.png"
             iconOnState: "qrc:/Assets/MainPage/ControlTabSelected.png"
@@ -203,8 +203,8 @@ ApplicationWindow {
 
         ToggleableButton {
             id: settingsBtn
-            width: 100 * respWidthFactor
-            height: 122 * respHeightFactor
+            width: 100 * respWidthFactor * 0.72
+            height: 122 * respHeightFactor * 0.72
             iconOffState: "qrc:/Assets/MainPage/SettingsTabUnselected.png"
             iconOffPressedState: "qrc:/Assets/MainPage/SettingsTabUnselected.png"
             iconOnState: "qrc:/Assets/MainPage/SettingsTabSelected.png"

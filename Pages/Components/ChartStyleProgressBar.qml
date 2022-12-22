@@ -34,7 +34,7 @@ Rectangle {
         text: value + "%"
         color: "#FFFFFF"
         font.family: "Kentledge"
-        font.pixelSize: 15 * avgFactor
+        font.pixelSize: 12 * avgFactor
         anchors {
             top: chatStylePB.top
             left: chatStylePB.left
