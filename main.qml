@@ -216,4 +216,6 @@ ApplicationWindow {
             }
         }
     }
+
+    onClosing: outputcontroller.killThread()
 }

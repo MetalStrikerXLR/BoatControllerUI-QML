@@ -661,8 +661,8 @@ Item {
             avgFactor: respAvgFactor * 0.72
             progressBarColorStart: "#07850C"
             progressBarColorEnd: "#2AA62F"
-            itemName: "Bar A"
-            value: 15
+            itemName: "Tank 1"
+            value: outputcontroller.levelTank1
 
         }
 
@@ -673,8 +673,8 @@ Item {
             avgFactor: respAvgFactor * 0.72
             progressBarColorStart: "#D80B0B"
             progressBarColorEnd: "#A62A2A"
-            itemName: "Bar B"
-            value: 27
+            itemName: "Tank 2"
+            value: outputcontroller.levelTank2
         }
 
         ChartStyleProgressBar {
@@ -684,8 +684,8 @@ Item {
             avgFactor: respAvgFactor * 0.72
             progressBarColorStart: "#07850C"
             progressBarColorEnd: "#2AA62F"
-            itemName: "Bar C"
-            value: 100
+            itemName: "Tank 3"
+            value: outputcontroller.levelTank3
         }
 
         ChartStyleProgressBar {
@@ -695,8 +695,8 @@ Item {
             avgFactor: respAvgFactor * 0.72
             progressBarColorStart: "#07850C"
             progressBarColorEnd: "#2AA62F"
-            itemName: "Bar D"
-            value: 30
+            itemName: "Tank 4"
+            value: outputcontroller.levelTank4
         }
 
         ChartStyleProgressBar {
@@ -706,8 +706,8 @@ Item {
             avgFactor: respAvgFactor * 0.72
             progressBarColorStart: "#075085"
             progressBarColorEnd: "#2A5CA6"
-            itemName: "Bar E"
-            value: 75
+            itemName: "Tank 5"
+            value: outputcontroller.levelTank5
         }
     }
 
