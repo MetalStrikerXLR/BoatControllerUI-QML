@@ -1,0 +1,21 @@
+- sudo apt-get update
+- sudo apt-get upgrade
+- sudo apt-get install xserver-xorg
+
+- sudo apt-get install -y gnustep gnustep-devel cmake kdelibs5-data subversion
+- sudo apt-get install -y qt5-default
+- sudo apt-get install -y qtbase5-dev qtbase5-private-dev
+- sudo apt-get install -y qt5-qmltooling-plugins
+- sudo apt-get install -y qtdeclarative5-*
+- sudo apt-get install -y qml-module-qtquick*
+- sudo apt-get install -y qtquick-*
+- sudo apt-get install -y qtquickcontrols5-*
+- sudo apt-get install -y libqt5multimedia5-plugins
+- sudo apt-get install -y qml-module-qtquick-dialogs
+
+Qmake Compile Commad format:
+- qmake BoatControllerUI.pro
+- make
+
+Run Application:
+- ./BoatControllerUI

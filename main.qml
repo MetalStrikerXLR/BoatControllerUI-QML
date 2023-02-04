@@ -1,6 +1,6 @@
-import QtQuick 2.12
-import QtQuick.Controls 2.12
-import QtQuick.Window 2.12
+import QtQuick 2.11
+import QtQuick.Controls 2.4
+import QtQuick.Window 2.11
 import "./Pages/DrivePage"
 import "./Pages/ControlPage"
 import "./Pages/SettingsPage"
@@ -10,7 +10,7 @@ ApplicationWindow {
     width: 1065
     height: 600
     visible: true
-    //    visibility: "Maximized"
+    visibility: "Maximized"
     title: qsTr("Boat Controller App")
 
     property int baseAssetWidth: 1065

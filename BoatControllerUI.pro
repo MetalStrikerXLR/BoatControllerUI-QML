@@ -1,4 +1,4 @@
-QT += quick widgets
+QT += quick widgets serialport
 
 #CONFIG+= static
 

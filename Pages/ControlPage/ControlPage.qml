@@ -1,5 +1,5 @@
-import QtQuick 2.12
-import QtQuick.Controls 2.12
+import QtQuick 2.11
+import QtQuick.Controls 2.4
 import "../Components"
 
 Item {
@@ -77,6 +77,7 @@ Item {
 
             onClicked: {
                 interiorLightBtnA.isOn = !interiorLightBtnA.isOn
+                outputcontroller.transmitData("x00h")
             }
         }
 
@@ -105,6 +106,7 @@ Item {
 
             onClicked: {
                 interiorLightBtnB.isOn = !interiorLightBtnB.isOn
+                outputcontroller.transmitData("x01h")
             }
         }
 
@@ -133,6 +135,7 @@ Item {
 
             onClicked: {
                 interiorLightBtnC.isOn = !interiorLightBtnC.isOn
+                outputcontroller.transmitData("x02h")
             }
         }
     }
@@ -173,6 +176,7 @@ Item {
 
             onClicked: {
                 interiorLightBtnD.isOn = !interiorLightBtnD.isOn
+                outputcontroller.transmitData("x03h")
             }
         }
 
@@ -200,6 +204,7 @@ Item {
             }
             onClicked: {
                 interiorLightBtnE.isOn = !interiorLightBtnE.isOn
+                outputcontroller.transmitData("x04h")
             }
         }
 
@@ -228,6 +233,7 @@ Item {
 
             onClicked: {
                 interiorLightBtnF.isOn = !interiorLightBtnF.isOn
+                outputcontroller.transmitData("x05h")
             }
         }
     }
@@ -287,6 +293,7 @@ Item {
 
             onClicked: {
                 exteriorLightBtnA.isOn = !exteriorLightBtnA.isOn
+                outputcontroller.transmitData("x06h")
             }
         }
 
@@ -315,6 +322,7 @@ Item {
 
             onClicked: {
                 exteriorLightBtnB.isOn = !exteriorLightBtnB.isOn
+                outputcontroller.transmitData("x07h")
             }
         }
 
@@ -343,6 +351,7 @@ Item {
 
             onClicked: {
                 exteriorLightBtnC.isOn = !exteriorLightBtnC.isOn
+                outputcontroller.transmitData("x08h")
             }
         }
     }
@@ -383,6 +392,7 @@ Item {
 
             onClicked: {
                 exteriorLightBtnD.isOn = !exteriorLightBtnD.isOn
+                outputcontroller.transmitData("x09h")
             }
         }
 
@@ -410,6 +420,7 @@ Item {
             }
             onClicked: {
                 exteriorLightBtnE.isOn = !exteriorLightBtnE.isOn
+                outputcontroller.transmitData("x0Ah")
             }
         }
 
@@ -438,6 +449,7 @@ Item {
 
             onClicked: {
                 exteriorLightBtnF.isOn = !exteriorLightBtnF.isOn
+                outputcontroller.transmitData("x0Bh")
             }
         }
     }
@@ -494,6 +506,7 @@ Item {
 
             onClicked: {
                 switchBtnA.isOn = !switchBtnA.isOn
+                outputcontroller.transmitData("x0Ch")
             }
         }
 
@@ -522,6 +535,7 @@ Item {
 
             onClicked: {
                 switchBtnB.isOn = !switchBtnB.isOn
+                outputcontroller.transmitData("x0Dh")
             }
         }
 
@@ -550,6 +564,7 @@ Item {
 
             onClicked: {
                 switchBtnC.isOn = !switchBtnC.isOn
+                outputcontroller.transmitData("x0Eh")
             }
         }
 
@@ -578,6 +593,7 @@ Item {
 
             onClicked: {
                 switchBtnD.isOn = !switchBtnD.isOn
+                outputcontroller.transmitData("x0Fh")
             }
         }
 
@@ -606,6 +622,7 @@ Item {
 
             onClicked: {
                 switchBtnE.isOn = !switchBtnE.isOn
+                outputcontroller.transmitData("x10h")
             }
         }
     }
@@ -728,6 +745,7 @@ Item {
 
             onClicked: {
                 fluidControlBtnA.isOn = !fluidControlBtnA.isOn
+                outputcontroller.transmitData("x11h")
             }
         }
 
@@ -756,6 +774,7 @@ Item {
 
             onClicked: {
                 fluidControlBtnB.isOn = !fluidControlBtnB.isOn
+                outputcontroller.transmitData("x12h")
             }
         }
 
@@ -784,6 +803,7 @@ Item {
 
             onClicked: {
                 fluidControlBtnC.isOn = !fluidControlBtnC.isOn
+                outputcontroller.transmitData("x13h")
             }
         }
 
@@ -812,6 +832,7 @@ Item {
 
             onClicked: {
                 fluidControlBtnD.isOn = !fluidControlBtnD.isOn
+                outputcontroller.transmitData("x14h")
             }
         }
 
@@ -840,6 +861,7 @@ Item {
 
             onClicked: {
                 fluidControlBtnE.isOn = !fluidControlBtnE.isOn
+                outputcontroller.transmitData("x15h")
             }
         }
     }
