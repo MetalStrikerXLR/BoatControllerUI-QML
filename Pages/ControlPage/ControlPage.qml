@@ -5,9 +5,6 @@ import "../Components"
 Item {
     id: root
     property string objectName: "ControlPage"
-    property real widthFactor
-    property real heightFactor
-    property real avgFactor
 
     Image {
         id: seperatorBG

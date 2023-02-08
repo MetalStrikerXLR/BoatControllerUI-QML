@@ -7,10 +7,10 @@ import "./Pages/SettingsPage"
 import "./Pages/Components"
 
 ApplicationWindow {
-    width: 1065
-    height: 600
+    width: 1280
+    height: 720
     visible: true
-    visibility: "Maximized"
+//    visibility: "Maximized"
     title: qsTr("Boat Controller App")
 
     property int baseAssetWidth: 1065
@@ -139,25 +139,16 @@ ApplicationWindow {
 
             DrivePage{
                 id: drivePage
-                widthFactor: respWidthFactor
-                heightFactor: respHeightFactor
-                avgFactor: respAvgFactor
                 visible: true
             }
 
             ControlPage{
                 id: controlPage
-                widthFactor: respWidthFactor
-                heightFactor: respHeightFactor
-                avgFactor: respAvgFactor
                 visible: true
             }
 
             SettingsPage{
                 id: settingsPage
-                widthFactor: respWidthFactor
-                heightFactor: respHeightFactor
-                avgFactor: respAvgFactor
                 visible: true
             }
         }
