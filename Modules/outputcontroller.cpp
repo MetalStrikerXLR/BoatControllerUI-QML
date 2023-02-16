@@ -212,7 +212,7 @@ void OutputController::receiveData()
         m_serialPort->waitForReadyRead(35);
 
         recvData = m_serialPort->readAll();
-        QList splitData = recvData.split(":");
+        QStringList splitData = recvData.split(":");
         qDebug() << splitData;
 
 

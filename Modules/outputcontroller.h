@@ -3,8 +3,8 @@
 
 #include <QObject>
 #include <QDebug>
-#include <QSerialPort>
-#include <QSerialPortInfo>
+#include <QtSerialPort/QSerialPort>
+#include <QtSerialPort/QSerialPortInfo>
 #include <QtConcurrent>
 #include <QTimer>
 

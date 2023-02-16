@@ -10,7 +10,7 @@ ApplicationWindow {
     width: 1280
     height: 720
     visible: true
-//    visibility: "Maximized"
+    visibility: "FullScreen"
     title: qsTr("Boat Controller App")
 
     property int baseAssetWidth: 1065
