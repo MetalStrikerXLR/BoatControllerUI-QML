@@ -7,7 +7,8 @@ Step1). Install Qt libraries:
 - sudo apt install qtbase5-dev qtbase5-private-dev
 - sudo apt install qt5-qmltooling-plugins
 - sudo apt-get install qtdeclarative5-dev 
-- sudo apt-get install qml-module-qtquick-controls
+- sudo apt-get install qml-module-qtquick-controls qml-module-qtquick-shapes qml-module-qtquick-controls2
+- sudo apt-get install qml-module-qtquick-*
 - sudo apt-get install libqt5multimedia5-plugins
 - sudo apt-get install libqt5serialport5-dev
 
@@ -15,6 +16,7 @@ Step2). Install display server:
 - sudo apt-get install xorg
 - sudo nano /etc/X11/Xwrapper.config
 - allowed_users=console -> allowed_users=anybody
+- save changes
 
 Step3). Upload firmware code to Arduino Mega and connect to raspberry pi
 
@@ -41,7 +43,6 @@ Step6.1). If make fails due to kill signal, increase swapfile size:
 
 Step7). Run Application using Xorg:
 - export DISPLAY=:0
-- startx <absolute path to binary>
+- sudo startx <absolute path to binary> -geometry 1920x1080+0+0
 
-Note1: Application may be blurry and screen resolution of raspberry pi may need to be set
-Note2: If Application is not fullscreen let me know
+Note1: Enable OpenGL for QML app by going to raspi-config
