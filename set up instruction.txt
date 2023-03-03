@@ -21,7 +21,7 @@ Step2). Install display server:
 Step3). Upload firmware code to Arduino Mega and connect to raspberry pi
 
 Step4). Test Serial UART:
-- minicom -b 115200 -D /dev/ttyUSB0 - (IF using UDB)
+- minicom -b 115200 -D /dev/ttyUSB0 - (IF using USB)
 - minicom -b 115200 -D /dev/ttyAMA0 - (IF using TTL Shifter)
 - You will start to get data if connections are good and arduino in powered on
 

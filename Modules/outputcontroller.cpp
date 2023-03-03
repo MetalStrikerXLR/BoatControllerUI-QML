@@ -4,9 +4,9 @@ OutputController::OutputController(QObject *parent)
     : QObject{parent}
 {
 #ifdef Q_OS_WINDOWS
-    m_portName = "COM3";
+    m_portName = "COM5";
 #else
-    m_portName = "ttyAMA0";
+    m_portName = "ttyUSB0";
 #endif
 
     m_serialPortChecker = new QTimer();
