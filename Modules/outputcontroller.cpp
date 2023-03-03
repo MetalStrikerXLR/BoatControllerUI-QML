@@ -9,22 +9,13 @@ OutputController::OutputController(QObject *parent)
     m_portName = "ttyUSB0";
 #endif
 
-    m_serialPortChecker = new QTimer();
-    m_serialPortChecker->setInterval(1000);
-    connect(m_serialPortChecker, &QTimer::timeout, this, &OutputController::checkSerialPortConnected);
+    // Lambda function format - Qorks in both Qt5 and Qt6
+    QtConcurrent::run([this]{
+                    checkSerialPortConnected();
+                });
 
-    m_serialPort = new QSerialPort(m_portName);
-    m_serialPort->setBaudRate(QSerialPort::Baud115200);
-    m_serialPort->setDataBits(QSerialPort::Data8);
-    m_serialPort->setParity(QSerialPort::NoParity);
-    m_serialPort->setStopBits(QSerialPort::OneStop);
-    m_serialPort->setFlowControl(QSerialPort::NoFlowControl);
-
-    qDebug() << "SerialPort Configured for: " << m_serialPort->portName() << " " << m_serialPort->baudRate();
-
-    //connect(m_serialPort, &QSerialPort::readyRead, this, &OutputController::receiveData);
-
-    m_serialPortChecker->start();
+    // Qt6 format for QConcurrent
+    //QtConcurrent::run(&OutputController::checkSerialPortConnected, this);
 }
 
 OutputController::~OutputController()
@@ -188,16 +179,21 @@ void OutputController::setRpm2(int rpm)
 
 void OutputController::checkSerialPortConnected()
 {
-    if(!m_serialPort->isOpen()) {
+    m_serialPort = new QSerialPort(m_portName);
+    m_serialPort->setBaudRate(QSerialPort::Baud115200);
+    m_serialPort->setDataBits(QSerialPort::Data8);
+    m_serialPort->setParity(QSerialPort::NoParity);
+    m_serialPort->setStopBits(QSerialPort::OneStop);
+    m_serialPort->setFlowControl(QSerialPort::NoFlowControl);
+
+    qDebug() << "SerialPort Configured for: " << m_serialPort->portName() << " " << m_serialPort->baudRate();
+
+    while(!m_serialPort->isOpen()) {
         if (m_serialPort->open(QIODevice::ReadWrite)) {
             qDebug() << "Serial Port opened successfully";
 
-            QtConcurrent::run([this]{
-                receiveData();
-            });
-
             transmitData("ACK");
-            m_serialPortChecker->stop();
+            receiveData();
 
         } else {
             qDebug() << "Serial Port open error";

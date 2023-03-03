@@ -27,7 +27,7 @@ Item {
         color: "#FFFFFF"
         font.pixelSize: 8.5 * respAvgFactor * 0.72
         font.family: "Kentledge"
-        font.weight: 400 * respAvgFactor * 0.72
+        font.weight: parseInt(400 * respAvgFactor * 0.72)
         horizontalAlignment: Qt.AlignHCenter
         anchors {
             top: parent.top
@@ -243,7 +243,7 @@ Item {
         color: "#FFFFFF"
         font.pixelSize: 8.5 * respAvgFactor * 0.72
         font.family: "Kentledge"
-        font.weight: 400 * respAvgFactor * 0.72
+        font.weight: parseInt(400 * respAvgFactor * 0.72)
         horizontalAlignment: Qt.AlignHCenter
         anchors {
             top: parent.top
@@ -459,7 +459,7 @@ Item {
         color: "#FFFFFF"
         font.pixelSize: 8.5 * respAvgFactor * 0.72
         font.family: "Kentledge"
-        font.weight: 400 * respAvgFactor * 0.72
+        font.weight: parseInt(400 * respAvgFactor * 0.72)
         horizontalAlignment: Qt.AlignHCenter
         anchors {
             top: parent.top
@@ -632,7 +632,7 @@ Item {
         color: "#FFFFFF"
         font.pixelSize: 8.5 * respAvgFactor * 0.72
         font.family: "Kentledge"
-        font.weight: 400 * respAvgFactor * 0.72
+        font.weight: parseInt(400 * respAvgFactor * 0.72)
         horizontalAlignment: Qt.AlignHCenter
         anchors {
             top: parent.top

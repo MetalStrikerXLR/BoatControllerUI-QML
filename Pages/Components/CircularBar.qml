@@ -1,8 +1,8 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.4
 import QtQuick.Shapes 1.4
-import QtGraphicalEffects 1.0
-//import Qt5Compat.GraphicalEffects
+//import QtGraphicalEffects 1.0
+import Qt5Compat.GraphicalEffects
 
 Item {
     id: control

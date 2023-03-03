@@ -6,7 +6,6 @@
 #include <QtSerialPort/QSerialPort>
 #include <QtSerialPort/QSerialPortInfo>
 #include <QtConcurrent>
-#include <QTimer>
 
 class OutputController : public QObject
 {
@@ -79,7 +78,7 @@ signals:
     void rpm1Changed();
     void rpm2Changed();
 
-private slots:
+public slots:
     void checkSerialPortConnected();
     void receiveData();
     void resetUI();
@@ -87,7 +86,6 @@ private slots:
 private:
     QString m_portName = "";
     QSerialPort * m_serialPort;
-    QTimer * m_serialPortChecker;
 
     int m_lvlTank1 = 0;
     int m_lvlTank2 = 0;
