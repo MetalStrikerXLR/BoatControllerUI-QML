@@ -86,6 +86,7 @@ public slots:
 private:
     QString m_portName = "";
     QSerialPort * m_serialPort;
+    QTimer * m_portCheckerTimer;
 
     int m_lvlTank1 = 0;
     int m_lvlTank2 = 0;

@@ -9,13 +9,21 @@ OutputController::OutputController(QObject *parent)
     m_portName = "ttyUSB0";
 #endif
 
-    // Lambda function format - Qorks in both Qt5 and Qt6
-    QtConcurrent::run([this]{
-                    checkSerialPortConnected();
-                });
+    m_portCheckerTimer = new QTimer();
+    m_portCheckerTimer->setInterval(1000);
 
-    // Qt6 format for QConcurrent
-    //QtConcurrent::run(&OutputController::checkSerialPortConnected, this);
+    connect(m_portCheckerTimer, &QTimer::timeout, this, &OutputController::checkSerialPortConnected);
+
+    m_serialPort = new QSerialPort(m_portName);
+    m_serialPort->setBaudRate(QSerialPort::Baud115200);
+    m_serialPort->setDataBits(QSerialPort::Data8);
+    m_serialPort->setParity(QSerialPort::NoParity);
+    m_serialPort->setStopBits(QSerialPort::OneStop);
+    m_serialPort->setFlowControl(QSerialPort::NoFlowControl);
+
+    connect(m_serialPort, &QSerialPort::readyRead, this, &OutputController::receiveData);
+
+    m_portCheckerTimer->start();
 }
 
 OutputController::~OutputController()
@@ -23,10 +31,10 @@ OutputController::~OutputController()
     delete m_serialPort;
 }
 
-void OutputController::transmitData(QString Data)
+void OutputController::transmitData(QString data)
 {
-    m_serialPort->flush();
-    m_serialPort->write(Data.toUtf8());
+    m_serialPort->clear(QSerialPort::Output);
+    m_serialPort->write(data.toUtf8());
 }
 
 void OutputController::killThread()
@@ -179,22 +187,11 @@ void OutputController::setRpm2(int rpm)
 
 void OutputController::checkSerialPortConnected()
 {
-    m_serialPort = new QSerialPort(m_portName);
-    m_serialPort->setBaudRate(QSerialPort::Baud115200);
-    m_serialPort->setDataBits(QSerialPort::Data8);
-    m_serialPort->setParity(QSerialPort::NoParity);
-    m_serialPort->setStopBits(QSerialPort::OneStop);
-    m_serialPort->setFlowControl(QSerialPort::NoFlowControl);
-
-    qDebug() << "SerialPort Configured for: " << m_serialPort->portName() << " " << m_serialPort->baudRate();
-
-    while(!m_serialPort->isOpen()) {
+    if(!m_serialPort->isOpen()) {
         if (m_serialPort->open(QIODevice::ReadWrite)) {
             qDebug() << "Serial Port opened successfully";
-
             transmitData("ACK");
-            receiveData();
-
+            m_portCheckerTimer->stop();
         } else {
             qDebug() << "Serial Port open error";
         }
@@ -203,17 +200,27 @@ void OutputController::checkSerialPortConnected()
 
 void OutputController::receiveData()
 {
-    while(!m_killThread) {
-        QString recvData;
-        m_serialPort->waitForReadyRead(35);
+    qint64 available = m_serialPort->bytesAvailable();
 
-        recvData = m_serialPort->readAll();
-        QStringList splitData = recvData.split(":");
-        qDebug() << splitData;
-
-
-        if (splitData[0] == "xFFh")
+    if (available == 4) {
+        if (m_serialPort->read(available) == "xFFh") {
             resetUI();
+        }
+    }
+
+    if (available >= 100) {
+
+        if (available > 118) {
+            m_serialPort->readAll();
+            return;
+        }
+
+        QString recvData = m_serialPort->readAll();
+        QStringList orderSplit = recvData.split(":L1");
+
+        QString reorderedRecvData = ":L1" + orderSplit[1] + orderSplit[0];
+        QStringList splitData = reorderedRecvData.split(":");
+        qDebug() << splitData;
 
         if (splitData.size() == 27) {
             if(splitData[1] == "L1"){
