@@ -67,8 +67,6 @@ class OutputController(QObject):
 
     @pyqtSlot(str)
     def transmitData(self, Data):
-        # self.m_serialPort.clear(QSerialPort.Output)
-        # self.m_serialPort.write(Data.toUtf8())
         self.m_serialPort.write(Data.encode())
 
     @pyqtSlot()
@@ -80,7 +78,7 @@ class OutputController(QObject):
         if not self.m_serialPort.isOpen():
             if self.m_serialPort.open(QSerialPort.ReadWrite):
                 print("Serial Port opened successfully")
-                self.transmitData("ACK")
+                self.transmitData("xAKh")
                 self.m_portCheckerTimer.stop()
             else:
                 print("Serial Port open error")
@@ -88,15 +86,10 @@ class OutputController(QObject):
     @pyqtSlot()
     def receiveData(self):
         available = self.m_serialPort.bytesAvailable()
-        print(available)
-        if available == 4:
-            if self.m_serialPort.read(available) == "xFFh":
-                print("Reset")
-                self.resetUI()
 
-        if available >= 100:
+        if available >= 109:
 
-            if available > 118:
+            if available > 127:
                 self.m_serialPort.readAll()
                 return
 
@@ -107,7 +100,7 @@ class OutputController(QObject):
             splitData = reorderedRecvData.split(":")
             print(splitData)
 
-            if len(splitData) == 27:
+            if len(splitData) == 29:
                 if splitData[1] == "L1":
                     lvl1 = (float(splitData[2]) * 0.12 - 17.65)
                     self.levelTank1 = lvl1
@@ -159,6 +152,10 @@ class OutputController(QObject):
                 if splitData[25] == "RPM2":
                     rpm2 = int(splitData[26])
                     self.rpm2 = rpm2
+
+                if splitData[27] == "CMD":
+                    if splitData[28] == "xFFh":
+                        self.resetUI()
 
             self.dataReceived.emit(recvData)
 
