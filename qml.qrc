@@ -42,5 +42,31 @@
         <file>Assets/ControlPage/ButtonL_Unpressed.png</file>
         <file>Assets/ControlPage/ButtonG_Pressed.png</file>
         <file>Pages/Components/ChartStyleProgressBar.qml</file>
+        <file>Assets/DrivePage/Icons/BatteryIcon.png</file>
+        <file>Assets/DrivePage/Icons/CheckCircle.png</file>
+        <file>Assets/DrivePage/Icons/EngineTempIcon.png</file>
+        <file>Assets/DrivePage/Icons/OilIcon.png</file>
+        <file>Assets/DrivePage/Icons/progressBG.png</file>
+        <file>Assets/DrivePage/Icons/SystemMsgBG.png</file>
+        <file>Assets/DrivePage/Widgets/DialCenter.png</file>
+        <file>Assets/DrivePage/Widgets/DialDisplayLeft.png</file>
+        <file>Assets/DrivePage/Widgets/DialDisplayRight.png</file>
+        <file>Assets/DrivePage/Widgets/LeftDial.png</file>
+        <file>Assets/DrivePage/Widgets/PS.png</file>
+        <file>Assets/DrivePage/Widgets/RightDial.png</file>
+        <file>Assets/DrivePage/Widgets/SystemMsg.png</file>
+        <file>Assets/DrivePage/Widgets/TempCardL.png</file>
+        <file>Assets/DrivePage/Widgets/TempCardR.png</file>
+        <file>Assets/DrivePage/Widgets/VoltCardL.png</file>
+        <file>Assets/DrivePage/Widgets/VoltCardR.png</file>
+        <file>Pages/Components/CircularBar.qml</file>
+        <file>Pages/Components/LeftDial.qml</file>
+        <file>Pages/Components/Navbar.qml</file>
+        <file>Pages/Components/RightDial.qml</file>
+        <file>Pages/Components/SystemMessage.qml</file>
+        <file>Pages/Components/TempMonitorLeft.qml</file>
+        <file>Pages/Components/TempMonitorRight.qml</file>
+        <file>Pages/Components/VoltageIndicatorLeft.qml</file>
+        <file>Pages/Components/VoltageIndicatorRight.qml</file>
     </qresource>
 </RCC>

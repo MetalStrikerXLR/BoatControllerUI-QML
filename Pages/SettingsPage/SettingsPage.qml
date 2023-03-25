@@ -1,18 +1,15 @@
-import QtQuick 2.12
-import QtQuick.Controls 2.12
+import QtQuick 2.11
+import QtQuick.Controls 2.4
 
 Item {
     id: root
     property string objectName: "SettingsPage"
-    property real widthFactor
-    property real heightFactor
-    property real avgFactor
 
     Text {
         id: name
         text: qsTr("Unavailable")
         color: "white"
-        font.pixelSize: 32 * avgFactor
+        font.pixelSize: 32 * respAvgFactor
         anchors {
             horizontalCenter: parent.horizontalCenter
             verticalCenter: parent.verticalCenter

@@ -1,5 +1,5 @@
-import QtQuick 2.12
-import QtQuick.Controls 2.12
+import QtQuick 2.11
+import QtQuick.Controls 2.4
 import QtQuick.Shapes 1.4
 
 Rectangle {
@@ -34,7 +34,7 @@ Rectangle {
         text: value + "%"
         color: "#FFFFFF"
         font.family: "Kentledge"
-        font.pixelSize: 15 * avgFactor
+        font.pixelSize: 12 * avgFactor
         anchors {
             top: chatStylePB.top
             left: chatStylePB.left
