@@ -862,4 +862,36 @@ Item {
             }
         }
     }
+
+    Connections {
+        target: outputcontroller
+
+        onResetComplete: {
+            interiorLightBtnA.isOn = false
+            interiorLightBtnB.isOn = false
+            interiorLightBtnC.isOn = false
+            interiorLightBtnD.isOn = false
+            interiorLightBtnE.isOn = false
+            interiorLightBtnF.isOn = false
+
+            exteriorLightBtnA.isOn = false
+            exteriorLightBtnB.isOn = false
+            exteriorLightBtnC.isOn = false
+            exteriorLightBtnD.isOn = false
+            exteriorLightBtnE.isOn = false
+            exteriorLightBtnF.isOn = false
+
+            switchBtnA.isOn = false
+            switchBtnB.isOn = false
+            switchBtnC.isOn = false
+            switchBtnD.isOn = false
+            switchBtnE.isOn = false
+
+            fluidControlBtnA.isOn = false
+            fluidControlBtnB.isOn = false
+            fluidControlBtnC.isOn = false
+            fluidControlBtnD.isOn = false
+            fluidControlBtnE.isOn = false
+        }
+    }
 }

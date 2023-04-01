@@ -3,7 +3,7 @@ import QML.QRC.QmlResources
 from PyQt5.QtGui import QGuiApplication
 from PyQt5.QtQml import QQmlApplicationEngine
 from PyQt5.QtCore import QObject, pyqtSignal, pyqtProperty, pyqtSlot, QTimer
-from PyQt5.QtSerialPort import QSerialPort
+from PyQt5.QtSerialPort import QSerialPort, QSerialPortInfo
 
 
 class OutputController(QObject):
@@ -51,7 +51,9 @@ class OutputController(QObject):
 
         self.m_killThread = False
 
-        # self.m_portName = "COM12"
+        # For Windows port name will be: COM + port number. Example: COM5
+        # For RPi port name will be: ttyUSB + port number. Example: ttyUSB0
+        self.m_portInfo = QSerialPortInfo()
         self.m_portName = "ttyUSB0"
 
         self.m_serialPort = QSerialPort(self.m_portName)
@@ -79,13 +81,23 @@ class OutputController(QObject):
 
     @pyqtSlot()
     def checkSerialPortConnected(self):
-        if not self.m_serialPort.isOpen():
-            if self.m_serialPort.open(QSerialPort.ReadWrite):
-                print("Serial Port opened successfully")
-                self.transmitData("xAKh")
-                self.m_portCheckerTimer.stop()
+        availablePorts = []
+        for port in self.m_portInfo.availablePorts():
+            availablePorts.append(port.portName())
+
+        if self.m_portName in availablePorts:
+            if not self.m_serialPort.isOpen():
+                if self.m_serialPort.open(QSerialPort.ReadWrite):
+                    print("Serial Port opened successfully")
+                    self.transmitData("xAKh")
+                else:
+                    print("Serial Port open error")
             else:
-                print("Serial Port open error")
+                # print("Serial Port already opened")
+                pass
+        else:
+            # print("Serial Port Unavailable, setting to close")
+            self.m_serialPort.close()
 
     @pyqtSlot()
     def receiveData(self):
@@ -105,63 +117,67 @@ class OutputController(QObject):
             # print(splitData)
 
             if len(splitData) == 29:
-                if splitData[1] == "L1":
-                    lvl1 = (float(splitData[2]) * 0.12 - 17.65)
-                    self.levelTank1 = lvl1
+                try:
+                    if splitData[1] == "L1":
+                        lvl1 = (float(splitData[2]) * 0.12 - 17.65)
+                        self.levelTank1 = lvl1
 
-                if splitData[3] == "L2":
-                    lvl2 = (float(splitData[4]) * 0.12 - 17.65)
-                    self.levelTank2 = lvl2
+                    if splitData[3] == "L2":
+                        lvl2 = (float(splitData[4]) * 0.12 - 17.65)
+                        self.levelTank2 = lvl2
 
-                if splitData[5] == "L3":
-                    lvl3 = (float(splitData[6]) * 0.12 - 17.65)
-                    self.levelTank3 = lvl3
+                    if splitData[5] == "L3":
+                        lvl3 = (float(splitData[6]) * 0.12 - 17.65)
+                        self.levelTank3 = lvl3
 
-                if splitData[7] == "L4":
-                    lvl4 = (float(splitData[8]) * 0.12 - 17.65)
-                    self.levelTank4 = lvl4
+                    if splitData[7] == "L4":
+                        lvl4 = (float(splitData[8]) * 0.12 - 17.65)
+                        self.levelTank4 = lvl4
 
-                if splitData[9] == "L5":
-                    lvl5 = (float(splitData[10]) * 0.12 - 17.65)
-                    self.levelTank5 = lvl5
+                    if splitData[9] == "L5":
+                        lvl5 = (float(splitData[10]) * 0.12 - 17.65)
+                        self.levelTank5 = lvl5
 
-                if splitData[11] == "B1":
-                    batt1 = float(splitData[12])
-                    self.batteryVoltage1 = batt1
+                    if splitData[11] == "B1":
+                        batt1 = float(splitData[12])
+                        self.batteryVoltage1 = batt1
 
-                if splitData[13] == "B2":
-                    batt2 = float(splitData[14])
-                    self.batteryVoltage2 = batt2
+                    if splitData[13] == "B2":
+                        batt2 = float(splitData[14])
+                        self.batteryVoltage2 = batt2
 
-                if splitData[15] == "O1":
-                    pres1 = int(float(splitData[16]))
-                    self.oilPressure1 = pres1
+                    if splitData[15] == "O1":
+                        pres1 = int(float(splitData[16]))
+                        self.oilPressure1 = pres1
 
-                if splitData[17] == "O2":
-                    pres2 = int(float(splitData[18]))
-                    self.oilPressure2 = pres2
+                    if splitData[17] == "O2":
+                        pres2 = int(float(splitData[18]))
+                        self.oilPressure2 = pres2
 
-                if splitData[19] == "T1":
-                    temp1 = int(float(splitData[20]))
-                    self.temperature1 = temp1
+                    if splitData[19] == "T1":
+                        temp1 = int(float(splitData[20]))
+                        self.temperature1 = temp1
 
-                if splitData[21] == "T2":
-                    temp2 = int(float(splitData[22]))
-                    self.temperature2 = temp2
+                    if splitData[21] == "T2":
+                        temp2 = int(float(splitData[22]))
+                        self.temperature2 = temp2
 
-                if splitData[23] == "RPM1":
-                    rpm1 = int(splitData[24])
-                    self.rpm1 = rpm1
+                    if splitData[23] == "RPM1":
+                        rpm1 = int(splitData[24])
+                        self.rpm1 = rpm1
 
-                if splitData[25] == "RPM2":
-                    rpm2 = int(splitData[26])
-                    self.rpm2 = rpm2
+                    if splitData[25] == "RPM2":
+                        rpm2 = int(splitData[26])
+                        self.rpm2 = rpm2
 
-                if splitData[27] == "CMD":
-                    if splitData[28] == "xFFh":
-                        self.resetUI()
+                    if splitData[27] == "CMD":
+                        if splitData[28] == "xFFh":
+                            self.resetUI()
 
-            self.dataReceived.emit(recvData)
+                    self.dataReceived.emit(recvData)
+
+                except:
+                    pass
 
     @pyqtSlot()
     def resetUI(self):
