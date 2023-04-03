@@ -866,7 +866,7 @@ Item {
     Connections {
         target: outputcontroller
 
-        onResetComplete: {
+        function onResetComplete() {
             interiorLightBtnA.isOn = false
             interiorLightBtnB.isOn = false
             interiorLightBtnC.isOn = false
