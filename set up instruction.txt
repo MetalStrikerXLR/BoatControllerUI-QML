@@ -2,9 +2,13 @@ Reference: https://forums.raspberrypi.com/viewtopic.php?t=330264
 
 
 Step1). Install dbuild toolsand Update pip and setuptools:
+- sudo apt-get install pip
 - python3 -m pip install --upgrade pip
 - python3 -m pip install --upgrade setuptools
 - pip3 install pyinstaller
+- sudo apt-get install qtbase5-dev
+- sudo apt-get install python3-pyqt5.qtquick
+- sudo apt-get install python3-pyqt5.qtserialport
 
 
 Step2). Install PyQt5 (will take alot of time ~2-3h):
