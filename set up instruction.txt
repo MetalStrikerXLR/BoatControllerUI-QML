@@ -8,6 +8,7 @@ Step1). Install dbuild toolsand Update pip and setuptools:
 - pip3 install pyinstaller
 - sudo apt-get install qtbase5-dev
 - sudo apt install libqt5opengl5-dev
+- sudo apt-get install qtdeclarative5-dev
 - sudo apt-get install qml-module-qtquick-controls qml-module-qtquick-shapes qml-module-qtquick-controls2
 - sudo apt-get install libqt5serialport5-dev
 - sudo apt-get install python3-pyqt5.qtquick
