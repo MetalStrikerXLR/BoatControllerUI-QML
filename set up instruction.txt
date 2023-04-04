@@ -48,4 +48,9 @@ Step8). Run Application using Xorg:
 - export DISPLAY=:0
 - sudo startx <absolute path to BoatControllerApp> -geometry 1920x1080+0+0
 
+
+Step8.5). If above step does not work then:
+- python3 main.py --platform eglfs (not using SSH)
+
+
 Note1: Enable OpenGL for QML app by going to raspi-config (Enabled by default on Raspberry Pi 4)
