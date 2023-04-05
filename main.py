@@ -125,23 +125,23 @@ class OutputController(QObject):
             if len(splitData) == 29:
                 try:
                     if splitData[1] == "L1":
-                        lvl1 = (float(splitData[2]) * 0.12 - 17.65)
+                        lvl1 = float(splitData[2])
                         self.levelTank1 = lvl1
 
                     if splitData[3] == "L2":
-                        lvl2 = (float(splitData[4]) * 0.12 - 17.65)
+                        lvl2 = float(splitData[4])
                         self.levelTank2 = lvl2
 
                     if splitData[5] == "L3":
-                        lvl3 = (float(splitData[6]) * 0.12 - 17.65)
+                        lvl3 = float(splitData[6])
                         self.levelTank3 = lvl3
 
                     if splitData[7] == "L4":
-                        lvl4 = (float(splitData[8]) * 0.12 - 17.65)
+                        lvl4 = float(splitData[8])
                         self.levelTank4 = lvl4
 
                     if splitData[9] == "L5":
-                        lvl5 = (float(splitData[10]) * 0.12 - 17.65)
+                        lvl5 = float(splitData[10])
                         self.levelTank5 = lvl5
 
                     if splitData[11] == "B1":
