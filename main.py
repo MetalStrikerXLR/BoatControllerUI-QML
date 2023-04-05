@@ -86,17 +86,19 @@ class OutputController(QObject):
             availablePorts.append(port.portName())
 
         if self.m_portName in availablePorts:
+            print("Serial Port", self.m_portName, "Available!")
             if not self.m_serialPort.isOpen():
                 if self.m_serialPort.open(QSerialPort.ReadWrite):
                     print("Serial Port opened successfully")
                     self.transmitData("xAKh")
                 else:
                     print("Serial Port open error")
+                    self.m_serialPort.close()
             else:
-                # print("Serial Port already opened")
+                print("Serial Port already opened")
                 pass
         else:
-            # print("Serial Port Unavailable, setting to close")
+            print("Serial Port", self.m_portName, "Unavailable! Plug in Arduino!")
             self.m_serialPort.close()
 
     @pyqtSlot()
@@ -109,12 +111,16 @@ class OutputController(QObject):
                 self.m_serialPort.readAll()
                 return
 
-            recvData = bytes(self.m_serialPort.readAll()).decode()
-            orderSplit = recvData.split(":L1")
+            try:
+                recvData = bytes(self.m_serialPort.readAll()).decode()
+                orderSplit = recvData.split(":L1")
+                reorderedRecvData = ":L1" + orderSplit[1] + orderSplit[0]
+                splitData = reorderedRecvData.split(":")
+                print("Incoming Data from Arduino: ", splitData)
 
-            reorderedRecvData = ":L1" + orderSplit[1] + orderSplit[0]
-            splitData = reorderedRecvData.split(":")
-            # print(splitData)
+            except:
+                print("Incoming data format from Arduino is wrong, skipping data parsing (check Arduino code)")
+                return
 
             if len(splitData) == 29:
                 try:
@@ -181,7 +187,7 @@ class OutputController(QObject):
 
     @pyqtSlot()
     def resetUI(self):
-        print("Controller Power Cycled: Resetting UI")
+        print("Arduino reset triggered. Resetting UI as well")
         self.resetComplete.emit()
 
     # ---------------------------------------- QML Exposed Properties ---------------------------------------- #
