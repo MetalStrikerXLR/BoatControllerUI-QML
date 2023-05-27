@@ -50,7 +50,7 @@ Step8). Run Application using Xorg:
 
 
 Step8.5). If above step does not work then:
-- export QT_QPA_EGLFS_HIDECURSOR=1
+- export QT_QPA_EGLFS_HIDECURSOR=1 (hide cursor)
 - python3 main.py --platform eglfs (not using SSH)
 
 
