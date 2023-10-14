@@ -1,6 +1,6 @@
 {
     "files": [
         "main.py",
-        "resources.qrc"
+        "qml.qrc"
     ]
 }

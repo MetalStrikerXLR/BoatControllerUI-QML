@@ -1,5 +1,5 @@
 import sys
-import resources
+import Assets.QRC.Resources
 from PyQt5.QtGui import QGuiApplication
 from PyQt5.QtQml import QQmlApplicationEngine
 from PyQt5.QtCore import QObject, pyqtSignal, pyqtProperty, pyqtSlot, QTimer
