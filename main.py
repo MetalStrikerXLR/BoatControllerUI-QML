@@ -1,5 +1,5 @@
 import sys
-import QML.QRC.QmlResources
+import resources
 from PyQt5.QtGui import QGuiApplication
 from PyQt5.QtQml import QQmlApplicationEngine
 from PyQt5.QtCore import QObject, pyqtSignal, pyqtProperty, pyqtSlot, QTimer
@@ -318,6 +318,6 @@ if __name__ == "__main__":
     engine.rootContext().setContextProperty("outputcontroller", output_controller)
 
     engine.quit.connect(app.quit)
-    engine.load('./QML/main.qml')
+    engine.load('main.qml')
 
     sys.exit(app.exec())
